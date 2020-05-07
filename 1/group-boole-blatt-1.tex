@@ -12,7 +12,7 @@
         \item Organic computing beschäftigt sich mit selbständigen systemen also Systemen, die sich selbst konfigurieren und optimieren. Aber auch selbst probleme erkennen und lösen. Dafür müssen sie ihre Umgebung wahrnehmen können und bestimmte Ereignisse zu einem bestimmten Grad vorraussehen können. 
 
         \item Ad-hoc und Sensornetze sind Netzwerke aus vergleichsweise low-tech Geräten, die ein oft temporäres Netzwerk aufspannen. Oft können diese durch folgende Eigenschaften identifiziert werden:
-            \begin{enumerate}[label=\alph*)]
+            \begin{itemize}
                 \item Ohne zentrale Infrastruktur
                 \item Kabellose Kommunikation
                 \item Teilnehmer sind in bewegung
@@ -20,7 +20,7 @@
                 \item Hererogene Endgeräte
                 \item Batteriebetriebene Geräte
                 \item Sammeln und Auswerten von Sensordaten vor Ort
-            \end{enumerate}
+            \end{itemize}
         Solche Netzwerke werden oft verwendet um Informationen in einem geographisch sehr begrenzten Gebiet zu sammeln. 
         \item Ad-hoc und Sensornetze müssen oft Selbstorganisiert sein, da sie eine Dezentrale struktur haben. Auch ist es wichtig, optimale Routen durch solche netzwerke zu finden, um Batterielaufzeit zu erhöhen. Da nicht immer Qualifiziertes/Trainiertes Personal vorhanden ist, sollten diese Netzwerke sich so weit wie möglich selbst konfigurieren und reparieren. All diese Aspekte machen sie aus der Perspektive von Organic Computing interessant.
         \item \emph{Ad-hoc} Netzwerke sind netzwerke, welche meist ohne vorexistierende Infrastruktur aufgebaut werden. Oft werden hierfür die Geräte der Teilnehmer selbst verwendet. \emph{Sensornetze} hingegen sind Netzwerke von Räumlich getrennten, autonomen Geräten, welche ihre umgebung mit hilfe von Sensoren kontrollieren. 
@@ -29,12 +29,19 @@
 
     \task{2}{13}
     \begin{enumerate}[label=\arabic*)]
-        \item 123
-        \item abc
-        \item def
-        \item efg
-        \item hij
-    \end{enumerate}
+        \item Der Paper, erklärt den Aufbau und Funktionsweise eines Ad-hoc Netzwerks und Anwendungsgebiete. Weiter gibt er einen Einblick in die Entstehungsweise und Anfänge des Ad-hocs. Da es noch ein recht neues Gebiet ist, gibt es auch noch Probleme denen man nachgehen muss und ein paar werden hier auch aufgezählt. Zuletzt wird einen Einblick die Zukunft des Ad-hoc Netzwerks gegeben und auch mögliche Wege wie sich dieses Gebiet weiterentwickelt.
+        \item \begin{itemize}
+        \item 1972: DoD-sponsored Packet Radio Network (PRNET)
+        \item 1980s: Survivable Adaptive Radio Network (SURAN)
+        \item goal of these two was to provide packet-switched networking to mobile battlefield elements in a infrastructureless, hostile environment
+        \item 1990: "'ad hoc networks"' concept was first created for commercial use
+        \end{itemize}
+        \item Scalability: Die Frage ob das Netzwerk auch bei größerer Anzahl an Nodes guten Service leisten kann\\
+    Energy-efficiency: Da vorgesehen viele Nodes mobil sind und deswegen die Enerieyzufuhr limitiert ist, muss darauf geachtet werden Verbrauch anzupassen\\
+    QoS: Ein Netzwerk soll nicht nur funktionieren, sondern soll auch gut funktionieren, die Qualität muss angemessen sein.
+    \item Multi-layer Problem?
+    \item Physical-Layer, muliple access control (MAC), network layer, transport layer
+        \end{enumerate}
 
 
     \pointsttl{21}

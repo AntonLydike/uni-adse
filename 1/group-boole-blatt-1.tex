@@ -1,7 +1,7 @@
 \input{../preamble}
 % configure title to be sheet 1
 \cfgtitle{1}
-\date{Donnerstag 10.05.2020}
+\date{Sonntag 10.05.2020}
 
 \begin{document}
     \maketitle
@@ -9,7 +9,7 @@
 
     \task{1}{8}
     \begin{enumerate}[label=\arabic*)]
-        \item Organic computing beschäftigt sich mit selbständigen systemen also Systemen, die sich selbst konfigurieren und optimieren. Aber auch selbst probleme erkennen und lösen. Dafür müssen sie ihre Umgebung wahrnehmen können und bestimmte Ereignisse zu einem bestimmten Grad vorraussehen können. 
+        \item Organic Computing beschäftigt sich mit selbständigen Systemen, also Systemen die sich selbst konfigurieren und optimieren. Welche aber auch selbst Probleme erkennen und lösen. Dafür müssen sie ihre Umgebung wahrnehmen können und bestimmte Ereignisse zu einem bestimmten Grad vorraussehen können. 
 
         \item Ad-hoc und Sensornetze sind Netzwerke aus vergleichsweise low-tech Geräten, die ein oft temporäres Netzwerk aufspannen. Oft können diese durch folgende Eigenschaften identifiziert werden:
             \begin{itemize}
@@ -21,28 +21,41 @@
                 \item Batteriebetriebene Geräte
                 \item Sammeln und Auswerten von Sensordaten vor Ort
             \end{itemize}
-        Solche Netzwerke werden oft verwendet um Informationen in einem geographisch sehr begrenzten Gebiet zu sammeln. 
-        \item Ad-hoc und Sensornetze müssen oft Selbstorganisiert sein, da sie eine Dezentrale struktur haben. Auch ist es wichtig, optimale Routen durch solche netzwerke zu finden, um Batterielaufzeit zu erhöhen. Da nicht immer Qualifiziertes/Trainiertes Personal vorhanden ist, sollten diese Netzwerke sich so weit wie möglich selbst konfigurieren und reparieren. All diese Aspekte machen sie aus der Perspektive von Organic Computing interessant.
-        \item \emph{Ad-hoc} Netzwerke sind netzwerke, welche meist ohne vorexistierende Infrastruktur aufgebaut werden. Oft werden hierfür die Geräte der Teilnehmer selbst verwendet. \emph{Sensornetze} hingegen sind Netzwerke von Räumlich getrennten, autonomen Geräten, welche ihre umgebung mit hilfe von Sensoren kontrollieren. 
+        Solche Netzwerke werden unter anderem verwendet um Informationen in einem geographisch sehr begrenzten Gebiet zu sammeln. 
+        
+        \item Ad-hoc und Sensornetze müssen meist Selbstorganisiert sein, da sie eine Dezentrale struktur haben. Auch ist es wichtig, optimale Routen durch solche netzwerke zu finden, um Batterielaufzeit zu erhöhen. 
+        
+        Da nicht immer qualifiziertes/trainiertes Personal vorhanden ist, sollten diese Netzwerke sich so weit wie möglich selbst konfigurieren und reparieren. All diese Aspekte machen sie aus der Perspektive von Organic Computing interessant.
+        \item \emph{Ad-hoc} Netzwerke sind Netzwerke, welche meist ohne vorexistierende Infrastruktur aufgebaut werden. Oft werden hierfür die Geräte der Teilnehmer selbst verwendet. 
+        
+        \emph{Sensornetze} hingegen sind Netzwerke von Räumlich getrennten, autonomen Geräten, welche ihre umgebung mit hilfe von Sensoren kontrollieren. 
+
         \item Ein Anwendungsgebiet von Ad-hoc Netzwerken ist z.B. das Aufstellen eines Kommunikationsnetzwerk nach einer Naturkatastrophe, die die primäre Kommunikations-Infrastruktur beschädigt hat. Ein Anwendungsgebiet für Sensornetzwerke ist z.B. die überwachung kritischer Infrastruktur wie Brücken oder Dämmen auf Anzeichen von Materialermüdung oder übermäßigem Stress.
     \end{enumerate}
 
     \task{2}{13}
     \begin{enumerate}[label=\arabic*)]
-        \item Der Paper, erklärt den Aufbau und Funktionsweise eines Ad-hoc Netzwerks und Anwendungsgebiete. Weiter gibt er einen Einblick in die Entstehungsweise und Anfänge des Ad-hocs. Da es noch ein recht neues Gebiet ist, gibt es auch noch Probleme denen man nachgehen muss und ein paar werden hier auch aufgezählt. Zuletzt wird einen Einblick die Zukunft des Ad-hoc Netzwerks gegeben und auch mögliche Wege wie sich dieses Gebiet weiterentwickelt.
+        \item Das Paper erklärt den Aufbau und die Funktionsweise von Ad-hoc Netzwerken und deren Anwendungsgebiete. Weiter gibt es einen Einblick in die Entstehungsweise und Anfänge von Ad-hoc Netzwerken. Da es noch ein recht neues Gebiet ist, gibt es auch noch Probleme denen man nachgehen muss, von denen einige aufgezählt werden. Zuletzt wird ein Einblick die Zukunft von Ad-hoc Netzwerken gegeben und auch mögliche Wege wie sich dieses Gebiet weiterentwickeln könnte.
+        \pagebreak
         \item \begin{itemize}
-        \item 1972: DoD-sponsored Packet Radio Network (PRNET)
-        \item 1980s: Survivable Adaptive Radio Network (SURAN)
-        \item goal of these two was to provide packet-switched networking to mobile battlefield elements in a infrastructureless, hostile environment
-        \item 1990: "'ad hoc networks"' concept was first created for commercial use
+            \item 1972: DoD-sponsored Packet Radio Network (PRNET)
+            \item 1980s: Survivable Adaptive Radio Network (SURAN)
+            \item Das Ziel dieser Netzwerke war es, Paketvermittelnde Netzwerke auf dem Schlachtfeld ein zu setzen, in einer Feindlichen umgebung ohne bestehende Infrastruktur.
+            \item 1990: Ad-hoc Netzwerke werden vom IEEE 802.11 Subkomitee diskutiert und erreichen somit die kommerzielle Welt. 
         \end{itemize}
-        \item Scalability: Die Frage ob das Netzwerk auch bei größerer Anzahl an Nodes guten Service leisten kann\\
-    Energy-efficiency: Da vorgesehen viele Nodes mobil sind und deswegen die Enerieyzufuhr limitiert ist, muss darauf geachtet werden Verbrauch anzupassen\\
-    QoS: Ein Netzwerk soll nicht nur funktionieren, sondern soll auch gut funktionieren, die Qualität muss angemessen sein.
-    \item Multi-layer Problem?
-    \item Physical-Layer, muliple access control (MAC), network layer, transport layer
-        \end{enumerate}
-
+        
+        \item \begin{itemize}
+            \item \textbf{Scalability:} Die Frage ob das Netzwerk auch bei größerer Anzahl an Nodes guten Service leisten kann.
+            
+            \item \textbf{Energy-efficiency:} Da viele Nodes mobil sind und deswegen die Energiezufuhr limitiert ist, sind energieeffiziente Lösungen vurzuziehen.
+            
+            \item \textbf{QoS:} Ein Netzwerk soll nicht nur funktionieren, sondern auch gut funktionieren. Die Qualität muss angemessen sein.
+        \end{itemize}
+        
+        \item Die im Paper erwähnten "Layers" beziehen sich aufg das OSI-Modell.
+        
+        \item Physical-Layer, Network layer, Transport layer, Application layer.
+    \end{enumerate}
 
     \pointsttl{21}
 

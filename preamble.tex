@@ -2,6 +2,7 @@
 \usepackage{microtype}
 \usepackage[utf8]{inputenc} 
 \usepackage[a4paper, total={6in, 9.6in}]{geometry}
+\usepackage[ngerman]{babel}
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -27,11 +28,13 @@
 \newcommand\green[1]{\textcolor{greeen}{#1}}
 \newcommand\blue[1]{\textcolor{blue}{#1}}
 
+\setlength{\parindent}{0pt}
+
 
 % define a task 
-\newcommand\task[2]{\noindent\textbf{Aufgabe #1)\hfill \underline{\,\,\,\,\,\,}\,\,/#2p.}}
+\newcommand\task[2]{\par\bigskip\textbf{Aufgabe #1)\hfill \underline{\,\,\,\,\,\,}\,\,/#2p.}\par}
 % and the total points for this sheet
-\newcommand\pointsttl[1]{\noindent\textbf{Gesamtpunkte: \hfill \underline{\,\,\,\,\,\,}\,\,/#1p.}}
+\newcommand\pointsttl[1]{\par\bigskip\textbf{Gesamtpunkte: \hfill \underline{\,\,\,\,\,\,}\,\,/#1p.}}
 
 
 \newcommand\cfgtitle[1]{\title{\vspace{-1.5cm}Übungsblatt #1\\%

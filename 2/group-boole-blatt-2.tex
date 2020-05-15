@@ -10,15 +10,15 @@
     \task{1}{26}
 
     \begin{enumerate}
-        \item Das Automatisieren der Aufzeichnungen ist wichtig, da sich das Verhalten der Fledermäuse stärker ändert, je öfter sie gefangen werden. Um möglichst unverfälschte Daten zu erhalten, sollte der eingriff in das Leben der Fledermaus möglichst gering gehalten werden. Aus dem gleichen Grund sollte der Sensor möglichst klein und leicht gehalten werden (5-10\% Körpergewicht)
+        \item Das Automatisieren der Aufzeichnungen ist wichtig, da sich das Verhalten der Fledermäuse stärker ändert, je öfter sie gefangen werden. Um möglichst unverfälschte Daten zu erhalten, sollte der eingriff in das Leben der Fledermaus möglichst gering gehalten werden. Aus dem gleichen Grund sollte der Sensor möglichst klein und leicht gehalten werden (5-10\% Körpergewicht).
         
-        \item Energieffizienz beginnt damit, dass das Energieverteilungssystem die einzelnen chips lediglich mit der mindestspannung versorgt. Außerdem wird der Transceiver samst Spannungsversorung ausgeschaltet, wenn er nicht benötigt wird. %2
+        \item Energieffizienz beginnt damit, dass das Energieverteilungssystem die einzelnen Chips lediglich mit der Mindestspannung versorgt. Außerdem wird der Transceiver samt Spannungsversorung ausgeschaltet, wenn er nicht benötigt wird.
         
         Des weiteren wird statt eines DC-DC-Konverters ein Low-Dropout-Regulator (LDO) verwendet, der kleiner und effizienter ist. Lediglich der Transceiver wird von einem DC-DC-Konverter mit Spannung versorgt. Wenn auf dem main Transceiver nichts gesendet wird, wird die geringere Spannungsversorgung von dem Microcontroller übernommen. 
         
-        Des weiteren wird ein Niedrigstrom-Beschläunigungs\-messer verwendet um zu erkennen, wann die Fledermaus kopfüber hängt. Zu diesen Pausezeiten wird die Abtastfrequenz des sensors verringert, da in diesem Zustand keine ständige Änderung der umgebung anzunehmen ist. %7
+        Des weiteren wird ein Niedrigstrom-Beschläunigungs\-messer verwendet um zu erkennen, wann die Fledermaus kopfüber hängt. Zu diesen Pausezeiten wird die Abtastfrequenz des sensors verringert, da in diesem Zustand keine ständige Änderung der umgebung anzunehmen ist.
 
-        Der Receiver für Kommunikation zwischen sensoren erlaubt das senden einer sogenannten "Wakeup-Sequenz" die es einem Sender erlaubt einen Empfänger im ruhezustand auf zu wecken. %9
+        Der Receiver für Kommunikation zwischen sensoren erlaubt das senden einer sogenannten "Wakeup-Sequenz" die es einem Sender erlaubt einen Empfänger im ruhezustand auf zu wecken.
 
         Schlussendlich wird ein Cortex M0+ Microcontroller verwendet, der sowohl einen effizeinten Schlafmodus, als auch einen effizienten Niedrigstromoszillator, was platz und gewicht spart, dafür jedoch einen höheren Uhrenfehler hervorruft.
         

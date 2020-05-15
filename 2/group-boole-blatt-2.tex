@@ -11,31 +11,31 @@
 
     \begin{enumerate}
         \item Das Automatisieren der Aufzeichnungen ist wichtig, da sich das Verhalten der Fledermäuse stärker ändert, je öfter sie gefangen werden. Um möglichst unverfälschte Daten zu erhalten, sollte der eingriff in das Leben der Fledermaus möglichst gering gehalten werden. Aus dem gleichen Grund sollte der Sensor möglichst klein und leicht gehalten werden (5-10\% Körpergewicht).
-        
-        \item Energieffizienz beginnt damit, dass das Energieverteilungssystem die einzelnen Chips lediglich mit der Mindestspannung versorgt. Außerdem wird der Transceiver samt Spannungsversorung ausgeschaltet, wenn er nicht benötigt wird.
-        
-        Des weiteren wird statt eines DC-DC-Konverters ein Low-Dropout-Regulator (LDO) verwendet, der kleiner und effizienter ist. Lediglich der Transceiver wird von einem DC-DC-Konverter mit Spannung versorgt. Wenn auf dem main Transceiver nichts gesendet wird, wird die geringere Spannungsversorgung von dem Microcontroller übernommen. 
-        
-        Des weiteren wird ein Niedrigstrom-Beschläunigungs\-messer verwendet um zu erkennen, wann die Fledermaus kopfüber hängt. Zu diesen Pausezeiten wird die Abtastfrequenz des sensors verringert, da in diesem Zustand keine ständige Änderung der umgebung anzunehmen ist.
+
+        \item Energieeffizienz beginnt damit, dass das Energieverteilungssystem die einzelnen Chips lediglich mit der Mindestspannung versorgt. Außerdem wird der Transceiver samt Spannungsversorgung ausgeschaltet, wenn er nicht benötigt wird.
+
+        Des weiteren wird statt eines DC-DC-Konverters ein Low-Dropout-Regulator (LDO) verwendet, der kleiner und effizienter ist. Lediglich der Transceiver wird von einem DC-DC-Konverter mit Spannung versorgt. Wenn auf dem main Transceiver nichts gesendet wird, wird die geringere Spannungsversorgung von dem Mikrocontroller übernommen.
+
+        Des weiteren wird ein Niedrigstrom-Beschleunigungs\-messer verwendet um zu erkennen, wann die Fledermaus kopfüber hängt. Zu diesen Pausezeiten wird die Abtastfrequenz des sensors verringert, da in diesem Zustand keine ständige Änderung der umgebung anzunehmen ist.
 
         Der Receiver für Kommunikation zwischen sensoren erlaubt das senden einer sogenannten "Wakeup-Sequenz" die es einem Sender erlaubt einen Empfänger im ruhezustand auf zu wecken.
 
-        Schlussendlich wird ein Cortex M0+ Microcontroller verwendet, der sowohl einen effizeinten Schlafmodus, als auch einen effizienten Niedrigstromoszillator, was platz und gewicht spart, dafür jedoch einen höheren Uhrenfehler hervorruft.
-        
-        \item Der von den Autoren beschriebene Uhrenfehler stammt daher, dass die bereits erwähnte Niedrigstromoszillator nicht in der Lage ist seine Frequenz über lange Zeit stabil zu halten. Dies hat zur folge, dass eine große Zahl von Takten nicht immer exakt gleich viel Zeit ausfüllen. 
-        
+        Schlussendlich wird ein Cortex M0+ Mikrocontroller verwendet, der sowohl einen effizienten Schlafmodus, als auch einen effizienten Niedrigstromoszillator, was platz und gewicht spart, dafür jedoch einen höheren Uhrenfehler hervorruft.
+
+        \item Der von den Autoren beschriebene Uhrenfehler stammt daher, dass die bereits erwähnte Niedrigstromoszillator nicht in der Lage ist seine Frequenz über lange Zeit stabil zu halten. Dies hat zur folge, dass eine große Zahl von Takten nicht immer exakt gleich viel Zeit ausfüllen.
+
         Dies ist problematisch wenn die berechnung der aktuellen Zeit davon abhängt Taktzyklen zu zählen. Der in dem Paper erwähnte fehler von 10\% bedeutet, dass nach 15 Tagen ein fehler von 1,5 Tagen in den Uhren vorliegt. Dies macht das Feststellen von Treffen zweier Fledermäuse quasi unmöglich, da der Node nicht mehr in der Lage ist die Zeit genau zu bestimmen.
 
-        Die Autoren lösten das Problem, in dem sie regelmäßig ihre aktuell berechnete lokale Zeit an die Basisstation senden. Diese kann anhand ihrer eignene genauen Uhr die different feststellen und den Uhrenfehler in den empfangenen Daten korrigieren.
-        
+        Die Autoren lösten das Problem, in dem sie regelmäßig ihre aktuell berechnete lokale Zeit an die Basisstation senden. Diese kann anhand ihrer eigenen genauen Uhr die different feststellen und den Uhrenfehler in den empfangenen Daten korrigieren.
+
         \item \begin{itemize}
             \item \emph{self-describing:} Die Geräte speichern abschätzungen ihres Arbeitsspeicherverbauches, sowie statistiken diverser anderer komponenten ab, um das diagnostizieren von Problemen zu vereinfachen.
             \item \emph{self-protecting:} Wenn eine neue Konfiguration an das Gerät gesendet wird, schaut es zunächst nach, ob diese Konfiguration bestehende Datensätze auf dem System invalidieren würde. Nur wenn die Datensätze nicht beschädigt werden, wird die Konfiguration aktualisiert.
         \end{itemize}
 
-        \item Jeder Node versendet periodisch ein Node-Beacon, welcher aus einer "Wakeup-Sequenz" welche den Transceiver aufweckt und einem Datenteil besteht. Wenn eine solche "Wakeup-Sequenz"\, empfangen wird, wird einen interrupt an den Prozessor gesendet, welcher den Transceiver auf volle Leistung hochfährt um den restlichen Teil des Beacons zu empfangen und zu speichern. 
-        
+        \item Jeder Node versendet periodisch ein Node-Beacon, welcher aus einer "Wakeup-Sequenz" welche den Transceiver aufweckt und einem Datenteil besteht. Wenn eine solche "Wakeup-Sequenz"\, empfangen wird, wird einen interrupt an den Prozessor gesendet, welcher den Transceiver auf volle Leistung hochfährt um den restlichen Teil des Beacons zu empfangen und zu speichern.
+
         Falls zu der empfangenen ID ein aktives Encounter gefunden wird, wird dieses aktualisiert, ansonsten wird ein neues angelegt. Ein Encounter gilt dann als nicht mehr aktiv, wenn mehrere Beacons nicht empfangen wurden, um Packet-Loss von Beacons zu erlauben. Wenn ein Meeting abgeschlossen ist, wird die dauer komprimiert, was zu genauigkeitsverlust führen kann, jedoch benötigt wird, um mit dem geringen Arbeitsspeicher aus zu kommen.
-        
+
     \end{enumerate}
 \end{document}

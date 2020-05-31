@@ -14,13 +14,23 @@
         \item \emph{Preamble-Sampling} is the concept of prefacing every data transmition with a ``preamble'', which spans the sampling period. This eliviates the need for synchronization. But this comes with increased cost for the sender, as the transmition duration is increased greatly. B-MAC uses this feature, X-MAC uses a different kind of preamble sampling.
         \item receiver has to wait long before knowing if the message is for him. Sender has to wait a long time, even if target receiver is already listening. X-Mac solves this by sending the preamble in short bursts with the targets address in them. When the target receives them, it sends an ACK frame and the transmition begins.
         \item In dense clusters, \emph{cluster heads (CHs)} are chosen, which advertise themselves. Each node in the network chooses the CH with highest signal strength. Each CH then configures his own CDMA code and TDMA schedule. During operation it collects and aggregates data for the sink and updates it periodically, after a time the CHs are rotated.
-        \item 
+        \item When using TRAMA, each node ``bids'' for each timeslot by computing a hash of it's id and the timeslot timestamp. Since the hash is deterministic, each node can compute the bids not only for himself, but for all two-hop neighbors. Now every node knows the global schedule and knows exactly when to listen and when to send packages without any additional overhead.
     \end{enumerate}
 
     \task{2}{9}
 
     \begin{enumerate}
-        \item 
+        \item The OSI model is comprised of seven layers: \begin{enumerate}[label=Layer \arabic*:,leftmargin=*]
+            \item Physical Layer - Sending/receiving raw bits
+            \item Data Link Layer - Transmitting individual data frames reliably
+            \item Network Layer - Structuring / managing of multi-node networks (addressing, routing, etc)
+            \item Transport Layer - Reliable transmission of data segments (handling AKCs, multiplexing)
+            \item Session Layer - Managing communication sessions
+            \item Presentation Layer - Converting networking data to application data (e.g. encrypting/decrypting streams)
+            \item Application Layer - High-Level APIs and Protocols like HTTP, FTP, Weather APIs etc.
+        \end{enumerate}
+
+        \item MAC is situated on the Data Link Layer (2), since it handles reliable transmissions of singular data frames. 
     \end{enumerate}
 
     \pointsttl{26}

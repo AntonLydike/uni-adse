@@ -9,20 +9,20 @@
 
     \task{1}{17}
     \begin{enumerate}
-        \item \emph{Medium Access Control (MAC)} is used to control which device receives or transmits when to prevent colisions and minimize power usage.
-        \item When using slotted ALOHA, interruptions can only happen when two senders decide to start transmitting at the sime time, versus normal ALOHA, where interrupts can appear during the whole transmition duration. This not only reduces colision probability, but als reduces the amount of time colliding radio waves are ``on air''.
-        \item \emph{Preamble-Sampling} is the concept of prefacing every data transmition with a ``preamble'', which spans the sampling period. This eliviates the need for synchronization. But this comes with increased cost for the sender, as the transmition duration is increased greatly. B-MAC uses this feature, X-MAC uses a different kind of preamble sampling.
-        \item receiver has to wait long before knowing if the message is for him. Sender has to wait a long time, even if target receiver is already listening. X-Mac solves this by sending the preamble in short bursts with the targets address in them. When the target receives them, it sends an ACK frame and the transmition begins.
-        \item In dense clusters, \emph{cluster heads (CHs)} are chosen, which advertise themselves. Each node in the network chooses the CH with highest signal strength. Each CH then configures his own CDMA code and TDMA schedule. During operation it collects and aggregates data for the sink and updates it periodically, after a time the CHs are rotated.
-        \item When using TRAMA, each node ``bids'' for each timeslot by computing a hash of it's id and the timeslot timestamp. Since the hash is deterministic, each node can compute the bids not only for himself, but for all two-hop neighbors. Now every node knows the global schedule and knows exactly when to listen and when to send packages without any additional overhead.
+        \item \emph{Medium Access Control (MAC)} is used to control when which devices should receive or transmit packages, in order to prevent collisions and minimize power usage.
+        \item When using slotted ALOHA, interruptions can only happen when two senders decide to start transmitting at the same time, versus normal ALOHA, where interrupts can appear during the whole transmission. This not only reduces collision probability, but also reduces the amount of time colliding radio waves are ``on air''.
+        \item \emph{Preamble-Sampling} is the concept of prefacing every data transmition with a ``preamble'', which spans the sampling period. This eliminates the need for synchronization, but it comes with increased energy cost for the sender, as the transmition duration is increased greatly. B-MAC uses this feature, X-MAC uses a different kind of preamble sampling.
+        \item With B-Mac a receiver has to wait long before knowing if the message is for him and a sender has to wait a long time, even if the target receiver is already listening. X-Mac solves this by sending a short preamble repeatedly with the targets address in them. When the target receives them, it sends an ACK frame and the transmition begins immediately.
+        \item In dense clusters, \emph{cluster heads (CHs)} are chosen, which advertise themselves. Each node in the network chooses the CH with highest signal strength. Each CH then configures his own CDMA code and TDMA schedule. During operation it collects and aggregates data for the sink and updates it periodically, after a time the CH role is rotated.
+        \item When using TRAMA, each node ``bids'' for each timeslot by computing a hash of it's id and the timeslot timestamp. Since the hash is deterministic, each node can compute the bids not only for itself, but for all two-hop neighbors. Now every node knows the global schedule and knows exactly when to listen and when to send packages without any additional overhead.
     \end{enumerate}
 
     \task{2}{9}
 
     \begin{enumerate}
         \item The OSI model is comprised of seven layers: \begin{enumerate}[label=Layer \arabic*:,leftmargin=*]
-            \item Physical Layer - Sending/receiving raw bits
-            \item Data Link Layer - Transmitting individual data frames reliably
+            \item Physical Layer - Sending/receiving raw bits to/from the transmission medium.
+            \item Data Link Layer - Handling direct connections and data transfer between nodes.
             \item Network Layer - Structuring / managing of multi-node networks (addressing, routing, etc)
             \item Transport Layer - Reliable transmission of data segments (handling AKCs, multiplexing)
             \item Session Layer - Managing communication sessions
@@ -30,9 +30,9 @@
             \item Application Layer - High-Level APIs and Protocols like HTTP, FTP, Weather APIs etc.
         \end{enumerate}
 
-        \item MAC is situated on the Data Link Layer (2), since it handles reliable transmissions of singular data frames. 
+        \item MAC is situated within the Data Link Layer (2), since it times and handles reliable transmission of data frames between individual nodes.
     \end{enumerate}
 
     \pointsttl{26}
-    
+
 \end{document}
